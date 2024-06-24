@@ -26,6 +26,14 @@ public class CapacityCalculator {
 
         if (products == null) readProductsData();
     }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public List<Machine> getMachines() {
+        return machines;
+    }
     public Map<String, Integer> getCapacityDemand() {
         if (capacityDemand != null && !capacityDemand.isEmpty())
             return capacityDemand;

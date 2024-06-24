@@ -1,23 +1,34 @@
 package com.example.capacityplanning;
 
 import com.example.capacityplanning.controller.RootLayoutController;
+import com.example.capacityplanning.model.CapacityCalculator;
+import com.example.capacityplanning.model.Machine;
+import com.example.capacityplanning.model.Product;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class MainApp extends Application {
-
     private Stage primaryStage;
     private BorderPane rootLayout;
+
+    private ObservableList<Product> productData = FXCollections.observableArrayList();
+    private ObservableList<Machine> machineData = FXCollections.observableArrayList();
+    private ObservableList<Map<String, Integer>> capacitySupplyData = FXCollections.observableArrayList();
+    private ObservableList<Map<String, Integer>> capacityDemandData = FXCollections.observableArrayList();
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
         primaryStage.setTitle("Capacity planning App");
 
+        setUpData();
         initRootLayout();
     }
     public static void main(String[] args) {
@@ -43,5 +54,29 @@ public class MainApp extends Application {
 
     public BorderPane getRootLayout() {
         return rootLayout;
+    }
+
+    public ObservableList<Product> getProductData() {
+        return productData;
+    }
+
+    public ObservableList<Machine> getMachineData() {
+        return machineData;
+    }
+
+    public ObservableList<Map<String, Integer>> getCapacitySupplyData() {
+        return capacitySupplyData;
+    }
+
+    public ObservableList<Map<String, Integer>> getCapacityDemandData() {
+        return capacityDemandData;
+    }
+
+    private void setUpData() {
+        CapacityCalculator capacityCalculator = new CapacityCalculator();
+        productData.addAll(capacityCalculator.getProducts());
+        machineData.addAll(capacityCalculator.getMachines());
+        capacitySupplyData.addAll(capacityCalculator.getCapacitySupply());
+        capacityDemandData.addAll(capacityCalculator.getCapacityDemand());
     }
 }
