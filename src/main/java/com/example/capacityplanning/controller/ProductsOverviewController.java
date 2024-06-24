@@ -19,8 +19,6 @@ public class ProductsOverviewController {
     @FXML
     public TableView<Step> tableViewSteps;
     @FXML
-    public TableColumn<Step, Integer> tableColumnSteps;
-    @FXML
     public TableColumn<Step, String> tableColumnMachines;
     @FXML
     public TableColumn<Step, Integer> tableColumnDurations;

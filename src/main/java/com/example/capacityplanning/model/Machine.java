@@ -23,4 +23,12 @@ public class Machine {
     public int getDailyCapacity() {
         return quantity * HOURS_PER_DAY;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public int getHoursPerDay() {
+        return HOURS_PER_DAY;
+    }
 }

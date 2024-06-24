@@ -18,11 +18,10 @@ import java.util.Map;
 public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
-
     private ObservableList<Product> productData = FXCollections.observableArrayList();
     private ObservableList<Machine> machineData = FXCollections.observableArrayList();
-    private ObservableList<Map<String, Integer>> capacitySupplyData = FXCollections.observableArrayList();
-    private ObservableList<Map<String, Integer>> capacityDemandData = FXCollections.observableArrayList();
+    Map<String, Integer> capacitySupplyData;
+    Map<String, Integer> capacityDemandData;
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
@@ -64,11 +63,11 @@ public class MainApp extends Application {
         return machineData;
     }
 
-    public ObservableList<Map<String, Integer>> getCapacitySupplyData() {
+    public Map<String, Integer> getCapacitySupplyData() {
         return capacitySupplyData;
     }
 
-    public ObservableList<Map<String, Integer>> getCapacityDemandData() {
+    public Map<String, Integer> getCapacityDemandData() {
         return capacityDemandData;
     }
 
@@ -76,7 +75,7 @@ public class MainApp extends Application {
         CapacityCalculator capacityCalculator = new CapacityCalculator();
         productData.addAll(capacityCalculator.getProducts());
         machineData.addAll(capacityCalculator.getMachines());
-        capacitySupplyData.addAll(capacityCalculator.getCapacitySupply());
-        capacityDemandData.addAll(capacityCalculator.getCapacityDemand());
+        capacitySupplyData = capacityCalculator.getCapacitySupply();
+        capacityDemandData = capacityCalculator.getCapacityDemand();
     }
 }

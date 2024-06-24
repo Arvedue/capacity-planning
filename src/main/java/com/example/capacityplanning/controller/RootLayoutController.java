@@ -34,10 +34,20 @@ public class RootLayoutController {
         }
     }
     @FXML
-    public void handleShowMachines(ActionEvent actionEvent) {
-    }
-    @FXML
     public void handleShowCapacity(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("capacity.fxml"));
+            AnchorPane smsHandyOverview = (AnchorPane) loader.load();
+
+            CapacityController controller = loader.getController();
+            controller.setUpData(mainApp);
+
+            rootLayout.setCenter(smsHandyOverview);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     @FXML
     public void handleShowDiagram(ActionEvent actionEvent) {

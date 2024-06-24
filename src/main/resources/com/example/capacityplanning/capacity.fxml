@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.capacityplanning.controller.CapacityController">
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="tableViewMachines" prefHeight="196.0" prefWidth="597.7142857142857" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableColumnMachine" prefWidth="100.0" text="Maschine" />
+                      <TableColumn fx:id="tableColumnNumber" prefWidth="75.0" text="Anzahl" />
+                        <TableColumn fx:id="tableColumnHours" prefWidth="150.0" text="Verfügbarkeit (Std/Tag)" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="14.0" layoutY="172.0" text="Kapazitäten">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="tableViewCapacity" prefHeight="196.0" prefWidth="597.7142857142857" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableColumnCapMachines" prefWidth="100.0" text="Maschine" />
+                      <TableColumn fx:id="tableColumnSupply" prefWidth="150.0" text="Kapazitätsangebot " />
+                        <TableColumn fx:id="tableColumnDemand" prefWidth="150.0" text="Kapazitätsbedarf " />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

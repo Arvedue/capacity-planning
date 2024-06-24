@@ -25,15 +25,15 @@
                   <TableView fx:id="tableViewSteps" prefHeight="397.7142857142857" prefWidth="417.14285714285717" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                     <columns>
                       <TableColumn fx:id="tableColumnMachines" prefWidth="200.0" text="Maschine" />
-                      <TableColumn fx:id="tableColumnDurations" prefWidth="75.0" text="Stunde" />
+                      <TableColumn fx:id="tableColumnDurations" prefWidth="150.0" text="Bearbeitungsdauer (Std)" />
                     </columns>
                   </TableView>
-                  <Label layoutX="14.0" layoutY="14.0" text="Arbeitsplan: ">
+                  <Label layoutX="14.0" layoutY="14.0" text="Arbeitsplan">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="117.0" layoutY="14.0" text="Arbeitsschritte 3-5">
+                  <Label layoutX="117.0" layoutY="14.0">
                      <font>
                         <Font size="14.0" />
                      </font>
