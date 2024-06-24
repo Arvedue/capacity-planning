@@ -36,7 +36,7 @@ public class RootLayoutController {
             AnchorPane smsHandyOverview = (AnchorPane) loader.load();
 
             ProductsOverviewController controller = loader.getController();
-            controller.setProductData(mainApp.getProductData());
+            controller.setMainApp(mainApp);
 
             rootLayout.setCenter(smsHandyOverview);
 
@@ -46,6 +46,8 @@ public class RootLayoutController {
     }
     @FXML
     public void handleShowCapacity(ActionEvent actionEvent) {
+        mainApp.updateCapacityDemand();
+        
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("capacity.fxml"));

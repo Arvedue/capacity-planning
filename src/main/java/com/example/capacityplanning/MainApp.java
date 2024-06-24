@@ -22,6 +22,8 @@ public class MainApp extends Application {
     private ObservableList<Machine> machineData = FXCollections.observableArrayList();
     Map<String, Integer> capacitySupplyData;
     Map<String, Integer> capacityDemandData;
+
+    private  CapacityCalculator capacityCalculator;
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
@@ -76,10 +78,18 @@ public class MainApp extends Application {
     }
 
     private void setUpData() {
-        CapacityCalculator capacityCalculator = new CapacityCalculator();
+        capacityCalculator = new CapacityCalculator();
         productData.addAll(capacityCalculator.getProducts());
         machineData.addAll(capacityCalculator.getMachines());
         capacitySupplyData = capacityCalculator.getCapacitySupply();
         capacityDemandData = capacityCalculator.getCapacityDemand();
+    }
+
+    public void updateCapacityDemand() {
+        capacityDemandData = capacityCalculator.getCapacityDemand();
+    }
+
+    public Machine getMachine(String name) {
+        return capacityCalculator.getMachineByName(name);
     }
 }

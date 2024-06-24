@@ -31,4 +31,9 @@ public class Machine {
     public int getHoursPerDay() {
         return HOURS_PER_DAY;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

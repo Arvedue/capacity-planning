@@ -12,8 +12,6 @@ public class CapacityCalculator {
 
     private final List<Machine> machines;
     private static List<Product> products;
-    private Map<String, Integer> capacityDemand;
-    private Map<String, Integer> capacitySupply;
 
     public CapacityCalculator() {
         machines = List.of(
@@ -35,10 +33,7 @@ public class CapacityCalculator {
         return machines;
     }
     public Map<String, Integer> getCapacityDemand() {
-        if (capacityDemand != null && !capacityDemand.isEmpty())
-            return capacityDemand;
-
-        capacityDemand = new HashMap<>();
+        Map<String, Integer> capacityDemand = new HashMap<>();
         for (Product product : products) {
             for (Step step : product.getSteps()) {
                 capacityDemand.put(step.getMachine(),
@@ -48,11 +43,12 @@ public class CapacityCalculator {
 
         return capacityDemand;
     }
-    public Map<String, Integer> getCapacitySupply() {
-        if (capacitySupply != null && !capacitySupply.isEmpty())
-            return capacitySupply;
 
-        capacitySupply = new HashMap<>();
+    public void calculateCapacityDemand() {
+
+    }
+    public Map<String, Integer> getCapacitySupply() {
+        Map<String, Integer> capacitySupply = new HashMap<>();
         for (Machine machine : machines) {
             capacitySupply.put(machine.getName(), machine.getDailyCapacity());
         }
@@ -68,5 +64,14 @@ public class CapacityCalculator {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Machine getMachineByName(String name) {
+        for (Machine machine : machines) {
+            if (machine.getName().equals(name))
+                return machine;
+        }
+
+        return null;
     }
 }

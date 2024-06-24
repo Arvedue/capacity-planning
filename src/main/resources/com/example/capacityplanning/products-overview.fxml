@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.capacityplanning.controller.ProductsOverviewController">
@@ -22,7 +26,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="tableViewSteps" prefHeight="397.7142857142857" prefWidth="417.14285714285717" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                  <TableView fx:id="tableViewSteps" prefHeight="397.7142857142857" prefWidth="417.14285714285717" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                     <columns>
                       <TableColumn fx:id="tableColumnMachines" prefWidth="200.0" text="Maschine" />
                       <TableColumn fx:id="tableColumnDurations" prefWidth="150.0" text="Bearbeitungsdauer (Std)" />
@@ -38,6 +42,27 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
+                  <ChoiceBox fx:id="choiceBoxMachine" layoutX="15.0" layoutY="265.0" prefWidth="150.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="10.0" />
+                  <TextField fx:id="textFieldDuration" layoutX="197.0" layoutY="265.0" promptText="Bearbeitungsdauer (Std)" AnchorPane.bottomAnchor="100.0" />
+                  <HBox layoutX="23.0" layoutY="290.0" prefHeight="40.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handleNewStep" text="Neu">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleUpdateStep" text="Bearbeiten">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleDeleteStep" text="Löschen">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
         </items>

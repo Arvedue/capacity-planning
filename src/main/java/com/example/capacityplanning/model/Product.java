@@ -27,6 +27,10 @@ public class Product {
         this.name = name;
     }
 
+    public void removeStep(Step step) {
+        steps.remove(step);
+    }
+
     @Override
     public String toString() {
         return "Product{" +
