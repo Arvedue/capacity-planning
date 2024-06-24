@@ -3,15 +3,13 @@ package com.example.capacityplanning.model;
 public class Machine {
     private String name;
     private int quantity;
-    private int hoursPerDay;
-    private int dayPerWeek;
+    private final int HOURS_PER_DAY = 8;
+    private final int WORKING_DAYS_PER_WEEK = 5;
     private final int WEEKS_IN_MONTH = 4;
 
-    public Machine(String name, int quantity, int hoursPerDay, int dayPerWeek) {
+    public Machine(String name, int quantity) {
         this.name = name;
         this.quantity = quantity;
-        this.hoursPerDay = hoursPerDay;
-        this.dayPerWeek = dayPerWeek;
     }
 
     public String getName() {
@@ -19,6 +17,6 @@ public class Machine {
     }
 
     public int getMonthlyCapacity() {
-        return quantity * hoursPerDay * dayPerWeek * WEEKS_IN_MONTH;
+        return quantity * HOURS_PER_DAY * WORKING_DAYS_PER_WEEK * WEEKS_IN_MONTH;
     }
 }

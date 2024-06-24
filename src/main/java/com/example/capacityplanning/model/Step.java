@@ -1,19 +1,30 @@
 package com.example.capacityplanning.model;
 
 public class Step {
-    private Machine machine;
+    private String machine;
     private int duration;
 
-    public Step(Machine machine, int duration) {
-        this.machine = machine;
-        this.duration = duration;
+    public String getMachine() {
+        return this.machine;
     }
 
-    public Machine getMachine() {
-        return this.machine;
+    public void setMachine(String machine) {
+        this.machine = machine;
     }
 
     public int getDuration() {
         return this.duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "Step{" +
+                "machine='" + machine + '\'' +
+                ", duration=" + duration +
+                '}';
     }
 }

@@ -1,5 +1,6 @@
 package com.example.capacityplanning;
 
+import com.example.capacityplanning.model.CapacityCalculator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
