@@ -1,4 +1,4 @@
-package com.example.capacityplanning;
+package com.example.capacityplanning.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
