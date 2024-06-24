@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class CapacityCalculator {
 
-    private List<Machine> machines;
+    private final List<Machine> machines;
     private static List<Product> products;
     private Map<String, Integer> capacityDemand;
     private Map<String, Integer> capacitySupply;
@@ -19,7 +19,7 @@ public class CapacityCalculator {
         machines = List.of(
             new Machine("Machine 1", 1),
             new Machine("Machine 2", 2),
-            new Machine("Machine 3", 3),
+            new Machine("Machine 3", 1),
             new Machine("Machine 4", 1),
             new Machine("Machine 5", 2)
         );
@@ -38,6 +38,11 @@ public class CapacityCalculator {
             }
         }
 
+        System.out.println("Kapazitätsbedarf (capacity demand):");
+        for (Map.Entry<String, Integer> entry : capacityDemand.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue() + " Std/Monat");
+        }
+
         return capacityDemand;
     }
     public Map<String, Integer> getCapacitySupply() {
@@ -46,18 +51,22 @@ public class CapacityCalculator {
 
         capacitySupply = new HashMap<>();
         for (Machine machine : machines) {
-            capacitySupply.put(machine.getName(), machine.getMonthlyCapacity());
+            capacitySupply.put(machine.getName(), machine.getDailyCapacity());
+        }
+
+        System.out.println("\nKapazitätsangebot (capacity supply):");
+        for (Map.Entry<String, Integer> entry : capacitySupply.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue() + " Std/Monat");
         }
 
         return capacitySupply;
     }
-    public void readProductsData() {
+    private void readProductsData() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             ProductsJsonWrapper wrapper = objectMapper.readValue(new File("products-data.json"),
                     ProductsJsonWrapper.class);
             products = wrapper.getProducts();
-            for (Product product : products) System.out.println(product);
         } catch (IOException e) {
             e.printStackTrace();
         }
