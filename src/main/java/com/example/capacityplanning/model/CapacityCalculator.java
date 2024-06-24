@@ -46,11 +46,6 @@ public class CapacityCalculator {
             }
         }
 
-        System.out.println("Kapazitätsbedarf (capacity demand):");
-        for (Map.Entry<String, Integer> entry : capacityDemand.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue() + " Std/Monat");
-        }
-
         return capacityDemand;
     }
     public Map<String, Integer> getCapacitySupply() {
@@ -60,11 +55,6 @@ public class CapacityCalculator {
         capacitySupply = new HashMap<>();
         for (Machine machine : machines) {
             capacitySupply.put(machine.getName(), machine.getDailyCapacity());
-        }
-
-        System.out.println("\nKapazitätsangebot (capacity supply):");
-        for (Map.Entry<String, Integer> entry : capacitySupply.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue() + " Std/Monat");
         }
 
         return capacitySupply;

@@ -71,6 +71,10 @@ public class MainApp extends Application {
         return capacityDemandData;
     }
 
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
     private void setUpData() {
         CapacityCalculator capacityCalculator = new CapacityCalculator();
         productData.addAll(capacityCalculator.getProducts());

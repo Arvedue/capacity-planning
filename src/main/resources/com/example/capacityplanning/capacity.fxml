@@ -33,8 +33,8 @@
                   <TableView fx:id="tableViewCapacity" prefHeight="196.0" prefWidth="597.7142857142857" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="tableColumnCapMachines" prefWidth="100.0" text="Maschine" />
-                      <TableColumn fx:id="tableColumnSupply" prefWidth="150.0" text="Kapazitätsangebot " />
-                        <TableColumn fx:id="tableColumnDemand" prefWidth="150.0" text="Kapazitätsbedarf " />
+                      <TableColumn fx:id="tableColumnSupply" prefWidth="150.0" text="Kapazitätsangebot (Std)" />
+                        <TableColumn fx:id="tableColumnDemand" prefWidth="150.0" text="Kapazitätsbedarf (Std)" />
                     </columns>
                   </TableView>
                </children>
