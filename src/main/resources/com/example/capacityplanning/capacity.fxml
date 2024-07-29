@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.capacityplanning.controller.CapacityController">
    <children>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -21,7 +20,7 @@
                         <TableColumn fx:id="tableColumnHours" prefWidth="150.0" text="Verfügbarkeit (Std/Tag)" />
                     </columns>
                   </TableView>
-                  <Label layoutX="14.0" layoutY="172.0" text="Kapazitäten">
+                  <Label layoutX="14.0" layoutY="172.0" text="Kapazitäten" AnchorPane.leftAnchor="10.0">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
